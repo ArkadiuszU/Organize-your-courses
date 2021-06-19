@@ -11,6 +11,7 @@ namespace OrganizeYourCourses.Models
         public string Name { get; set; }
         public string ImgPath { get; set; }
 
+        public string Color { get; set; }
         public bool Active { get; set; }
     }
 }

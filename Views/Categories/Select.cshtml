@@ -1,0 +1,36 @@
+﻿@model IEnumerable<OrganizeYourCourses.Models.Category>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>View</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+@foreach (var item in Model)
+{
+    //asp-route-id=
+
+    //<a asp-action="Active"  style="text-decoration: none;">
+    @using (Html.BeginForm("Active", "Categories", new { id = item.Id },  FormMethod.Post))
+    {
+<div class="d-flex justify-content-between hover-overlay" style="background-color: @(item.Color); margin:2%; @(item.Active ? "opacity : 1" : "opacity: 0.5")">
+    <h4> @(item.Name) </h4>
+    <input type="submit" value="Submit" />
+</div>
+     }
+        //</a>
+
+
+
+
+
+
+
+
+
+    }
