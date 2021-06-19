@@ -7,7 +7,10 @@ namespace OrganizeYourCourses.Models
 {
     public class Category
     {
-        public int MyPropertyInt { get; set; }
-        public string MyPropertyString { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string ImgPath { get; set; }
+
+        public bool Active { get; set; }
     }
 }
