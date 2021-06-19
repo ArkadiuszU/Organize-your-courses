@@ -1,26 +1,45 @@
-﻿@model  IEnumerable<OrganizeYourCourses.Models.Category>
+﻿@model IEnumerable<OrganizeYourCourses.Models.Category>
 
-        @{
-            ViewData["Title"] = "Categories";
-        }
+@{
+    ViewData["Title"] = "Categories";
+}
 
-        <h1>Categories</h1>
+<h1>Categories</h1>
 
-        <div class="container-fluid d-flex justify-content-around flex-wrap">
-      
-            @foreach (var item in Model)
-            {
-                <div class="card" style="width: 18rem; margin: 2%">
-                    <img src="~/img/Category/@Html.DisplayFor(modelItem=> item.ImgPath)" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
-                        <p class="card-text">Some quick example text</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
+
+@if (Model.Count() > 0)
+{
+    <div class="container-fluid d-flex justify-content-around flex-wrap">
+        @foreach (var item in Model)
+        {
+            <div class="card" style="width: 18rem; margin: 2%">
+                <img src="~/img/Category/@Html.DisplayFor(modelItem => item.ImgPath)" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+                    <p class="card-text">Some quick example text</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
-            }
+            </div>
+        }
+    </div>
 
-        </div>
+}
+else
+{
+<div class="container-fluid d-flex align-content-center flex-column" style="margin-top:5%">
+    <h3>Ups.. no category to show</h3>
+    <p>
+        It looks like you don't ad any category to your courses organizer <br />
+        Select one from predefinied category or add your own category by buttons below
+    </p>
+    <div>
+        <button asp-action="Index" type="button" class="btn btn-light" style="width:20%">Select</button>
+        <button type="button" class="btn btn-light" style="width:20%">Add</button>
+    </div>
+</div>
+}
 
 
-   
+
+
+
