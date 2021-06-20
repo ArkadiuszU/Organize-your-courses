@@ -15,7 +15,7 @@ namespace OrganizeYourCourses.Controllers
             new Category { Id = 3, Name = "Cooking", ImgPath="cooking-category.png" ,  Color ="#EB526E"},
             new Category { Id = 4, Name = "Music", ImgPath="music-category.png" ,  Color ="#9FEF92"},
             new Category { Id = 5, Name = "Economy", ImgPath="economy-category.png",  Color ="#F2C178" },
-            new Category { Id = 5, Name = "Art", ImgPath="art-category.png",  Color ="#FF8CD8" }
+            new Category { Id = 6, Name = "Art", ImgPath="art-category.png",  Color ="#FF8CD8" }
 
         };
         public IActionResult Index()
@@ -31,7 +31,8 @@ namespace OrganizeYourCourses.Controllers
        [HttpPost]
         public IActionResult Active(int id)
         {
-            categories.FirstOrDefault(c => c.Id == id).Active = true;
+            var category = categories.FirstOrDefault(c => c.Id == id);
+            category.Active = !category.Active;
             return RedirectToAction(nameof(Index));
         }
     }
