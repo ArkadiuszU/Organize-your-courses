@@ -32,12 +32,30 @@ namespace OrganizeYourCourses.Controllers
         {
             return View();
         }
+
+        public IActionResult Edit(int id)
+        {
+            var category = categories.FirstOrDefault(c => c.Id == id);
+            return View(category);
+        }
+        
+
         [HttpPost]
         public IActionResult Create(Category model)
         {
             model.Id = categories.Count() + 1;
             model.Active = true;
             categories.Add(model);
+            return RedirectToAction(nameof(Select));
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Category model)
+        {
+            var category = categories.FirstOrDefault(c => c.Id == model.Id);
+            category.Name = model.Name;
+            category.Description = model.Description;
+            category.Color = model.Color;
             return RedirectToAction(nameof(Select));
         }
 

@@ -21,14 +21,14 @@
                 {
                     @using (Html.BeginForm("Remove", "Categories", new { id = item.Id }, FormMethod.Post))
                     {
-                        <input class="btn btn-light btn-sm" type="submit" value=Remove >
-                    }
-                    @using (Html.BeginForm("Edit", "Categories", new { id = item.Id }, FormMethod.Post))
-                    {
-                        <input class="btn btn-light btn-sm" type="submit" value=Edit >
+                        <input class="btn btn-light btn-sm" type="submit" value=Remove>
                     }
 
-                }
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-light btn-sm" })
+
+
+
+               }
 
             </div>
         </div>
