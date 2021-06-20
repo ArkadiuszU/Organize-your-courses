@@ -6,31 +6,36 @@
 
 <h1>View</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-
 
 @foreach (var item in Model)
 {
-    //asp-route-id=
+   
+        <div class="d-flex justify-content-between hover-overlay" style= "margin:2%; border-bottom: solid 2px @(item.Color); @(item.Active ? "opacity : 1" : "opacity: 0.4")">
+            <h4> @(item.Name) </h4>
+            <div class="d-flex justify-content-end" style="width:15%">
+                @using (Html.BeginForm("Active", "Categories", new { id = item.Id }, FormMethod.Post))
+                {
+                    <input class="btn btn-light btn-sm" type="submit" value=@(item.Active ? "Disable" : "Enable") />
+                }
+                @if (!item.IsPredefined)
+                {
+                    @using (Html.BeginForm("Remove", "Categories", new { id = item.Id }, FormMethod.Post))
+                    {
+                        <input class="btn btn-light btn-sm" type="submit" value=Remove >
+                    }
+                    @using (Html.BeginForm("Edit", "Categories", new { id = item.Id }, FormMethod.Post))
+                    {
+                        <input class="btn btn-light btn-sm" type="submit" value=Edit >
+                    }
 
-    //<a asp-action="Active"  style="text-decoration: none;">
-    @using (Html.BeginForm("Active", "Categories", new { id = item.Id },  FormMethod.Post))
-    {
-<div class="d-flex justify-content-between hover-overlay" style="background-color: @(item.Color); margin:2%; @(item.Active ? "opacity : 1" : "opacity: 0.5")">
-    <h4> @(item.Name) </h4>
-    <input type="submit" value="Submit" />
+                }
+
+            </div>
+        </div>
+    
+}
+
+<div class="d-flex justify-content-end" style="margin-top:5%">
+    <a asp-action="Create" class="btn btn-light" style="margin-right:1%">Create new</a>
+    <a asp-action="Index" class="btn btn-light">Back</a>
 </div>
-     }
-        //</a>
-
-
-
-
-
-
-
-
-
-    }
