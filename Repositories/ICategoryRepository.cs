@@ -13,7 +13,7 @@ namespace OrganizeYourCourses.Repositories
         public Category GetCategoryById(int id);
         public bool ActiveSelectedCategory(int id);
         public bool RemoveSelectedCategory(int id);
-        public bool EditSelectedCategory(Category category);
-        public bool CreateNewCategory(Category category);
+        public bool EditSelectedCategory(CategoryDto category);
+        public bool CreateNewCategory(CategoryDto category);
     }
 }

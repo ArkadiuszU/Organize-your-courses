@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace OrganizeYourCourses
 {
     public class Startup
@@ -31,6 +32,7 @@ namespace OrganizeYourCourses
                 options.UseSqlServer(Configuration.GetConnectionString("OrganizeYourCoursesDatabase")));
             services.AddScoped<OrganizeYourCoursesSeeder>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddAutoMapper(this.GetType().Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

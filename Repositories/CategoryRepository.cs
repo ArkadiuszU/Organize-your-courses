@@ -1,4 +1,5 @@
-﻿using OrganizeYourCourses.Models;
+﻿using AutoMapper;
+using OrganizeYourCourses.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,12 @@ namespace OrganizeYourCourses.Repositories
     public class CategoryRepository : ICategoryRepository
     {
         private readonly OrganizeYourCoursesDbContext dbContext;
+        private readonly IMapper mapper;
 
-        public CategoryRepository(OrganizeYourCoursesDbContext dbContext)
+        public CategoryRepository(OrganizeYourCoursesDbContext dbContext, IMapper mapper)
         {
             this.dbContext = dbContext;
+            this.mapper = mapper;
         }
 
         public IEnumerable<Category> GetActiveCategories()
@@ -46,7 +49,7 @@ namespace OrganizeYourCourses.Repositories
             }
         }
 
-        public bool EditSelectedCategory(Category category)
+        public bool EditSelectedCategory(CategoryDto category)
         {
             var selectedCategory = GetCategoryById(category.Id);
             if (selectedCategory is null)
@@ -64,7 +67,7 @@ namespace OrganizeYourCourses.Repositories
            
         }
 
-        public bool CreateNewCategory(Category category)
+        public bool CreateNewCategory(CategoryDto category)
         {
             if (category is null)
             {
@@ -72,13 +75,9 @@ namespace OrganizeYourCourses.Repositories
             }
             else
             {
-                Category newCategory = new Category
-                {
-                    Name = category.Name,
-                    Description = category.Description,
-                    Color = category.Color,
-                    Active = true
-                };
+               
+                Category newCategory = mapper.Map<Category>(category);
+                newCategory.Active = true;
                 dbContext.Categories.Add(newCategory);
                 dbContext.SaveChanges();
                 return true;

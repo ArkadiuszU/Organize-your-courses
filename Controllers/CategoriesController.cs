@@ -54,14 +54,14 @@ namespace OrganizeYourCourses.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Category model)
+        public IActionResult Edit(CategoryDto model)
         {
             categoryRepository.EditSelectedCategory(model);
             return RedirectToAction(nameof(Select));
         }
 
         [HttpPost]
-        public IActionResult Create(Category model)
+        public IActionResult Create(CategoryDto model)
         {
             categoryRepository.CreateNewCategory(model);
             return RedirectToAction(nameof(Select));
