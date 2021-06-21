@@ -8,6 +8,12 @@ namespace OrganizeYourCourses.Repositories
 {
     public interface ICategoryRepository
     {
+        public IEnumerable<Category> GetAllCategories();
         public IEnumerable<Category> GetActiveCategories();
+        public Category GetCategoryById(int id);
+        public bool ActiveSelectedCategory(int id);
+        public bool RemoveSelectedCategory(int id);
+        public bool EditSelectedCategory(Category category);
+        public bool CreateNewCategory(Category category);
     }
 }

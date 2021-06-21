@@ -10,79 +10,71 @@ namespace OrganizeYourCourses.Controllers
 {
     public class CategoriesController : Controller
     {
-        private static List<Category> categories = new List<Category>() {
-            new Category { Id = 1, Name = "Foreign languages", ImgPath="language-category.png",  Color ="#17A2B8", IsPredefined=true},
-            new Category { Id = 2, Name = "Programing", ImgPath= "programing-category.png",  Color ="#03DAC6",IsPredefined=true },
-            new Category { Id = 3, Name = "Cooking", ImgPath="cooking-category.png" ,  Color ="#EB526E", IsPredefined=true},
-            new Category { Id = 4, Name = "Music", ImgPath="music-category.png" ,  Color ="#9FEF92", IsPredefined=true},
-            new Category { Id = 5, Name = "Economy", ImgPath="economy-category.png",  Color ="#F2C178", IsPredefined=true },
-            new Category { Id = 6, Name = "Art", ImgPath="art-category.png",  Color ="#FF8CD8"}
 
-        };
         private readonly ICategoryRepository categoryRepository;
 
         public CategoriesController(ICategoryRepository categoryRepository)
         {
             this.categoryRepository = categoryRepository;
         }
+        
+        [HttpGet]
         public IActionResult Index()
         {
             var categories = categoryRepository.GetActiveCategories();
-            //return View(categories.Where(item => item.Active));
             return View(categories);
         }
-
+        
+        [HttpGet]
         public IActionResult Select()
         {
+            var categories = categoryRepository.GetAllCategories();
             return View(categories);
         }
-
+        
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
-
+        
+        [HttpGet]
         public IActionResult Edit(int id)
         {
-            var category = categories.FirstOrDefault(c => c.Id == id);
+            var category = categoryRepository.GetCategoryById(id);
             return View(category);
         }
-        
 
+        
         [HttpPost]
-        public IActionResult Create(Category model)
+        public IActionResult Active(int id)
         {
-            model.Id = categories.Count() + 1;
-            model.Active = true;
-            categories.Add(model);
+            categoryRepository.ActiveSelectedCategory(id);
             return RedirectToAction(nameof(Select));
         }
 
         [HttpPost]
         public IActionResult Edit(Category model)
         {
-            var category = categories.FirstOrDefault(c => c.Id == model.Id);
-            category.Name = model.Name;
-            category.Description = model.Description;
-            category.Color = model.Color;
+            categoryRepository.EditSelectedCategory(model);
+            return RedirectToAction(nameof(Select));
+        }
+
+        [HttpPost]
+        public IActionResult Create(Category model)
+        {
+            categoryRepository.CreateNewCategory(model);
             return RedirectToAction(nameof(Select));
         }
 
         [HttpPost]
         public IActionResult Remove(int id)
         {
-            var category = categories.FirstOrDefault(c => c.Id == id);
-            categories.Remove(category);
+            categoryRepository.RemoveSelectedCategory(id);
             return RedirectToAction(nameof(Select));
         }
 
-        [HttpPost]
-        public IActionResult Active(int id)
-        {
-            var category = categories.FirstOrDefault(c => c.Id == id);
-            category.Active = !category.Active;
-            return RedirectToAction(nameof(Select));
-        }
+
 
 
     }
