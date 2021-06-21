@@ -8,8 +8,10 @@ namespace OrganizeYourCourses.Models
 {
     public class OrganizeYourCoursesDbContext : DbContext
     {
-        private string _connectionString = @"Server=(localdb)\MSSQLLocalDB;Database=OrganizeYourCoursesDb;Trusted_Connection=True;";
         public DbSet<Category> Categories { get; set; }
+
+        public OrganizeYourCoursesDbContext(DbContextOptions options) : base(options) { }
+       
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>()
@@ -20,11 +22,6 @@ namespace OrganizeYourCourses.Models
             modelBuilder.Entity<Category>()
                 .Property(c => c.Description)
                 .HasMaxLength(25);
-
-        }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(_connectionString);
 
         }
     }

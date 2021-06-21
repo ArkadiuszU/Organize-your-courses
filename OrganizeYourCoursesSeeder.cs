@@ -25,6 +25,9 @@ namespace OrganizeYourCourses
                     dbContext.SaveChanges();
                 }
             }
+            else {
+                throw new Exception("database");
+            }
         }
         private IEnumerable<Category> GetPredefinedCategories()
         {
