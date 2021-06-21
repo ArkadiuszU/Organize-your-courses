@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OrganizeYourCourses.Models;
+using OrganizeYourCourses.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,7 @@ namespace OrganizeYourCourses
             services.AddDbContext<OrganizeYourCoursesDbContext>( options => 
                 options.UseSqlServer(Configuration.GetConnectionString("OrganizeYourCoursesDatabase")));
             services.AddScoped<OrganizeYourCoursesSeeder>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

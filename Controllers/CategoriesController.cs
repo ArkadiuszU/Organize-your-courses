@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OrganizeYourCourses.Models;
+using OrganizeYourCourses.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,9 +19,17 @@ namespace OrganizeYourCourses.Controllers
             new Category { Id = 6, Name = "Art", ImgPath="art-category.png",  Color ="#FF8CD8"}
 
         };
+        private readonly ICategoryRepository categoryRepository;
+
+        public CategoriesController(ICategoryRepository categoryRepository)
+        {
+            this.categoryRepository = categoryRepository;
+        }
         public IActionResult Index()
         {
-            return View(categories.Where(item => item.Active));
+            var categories = categoryRepository.GetActiveCategories();
+            //return View(categories.Where(item => item.Active));
+            return View(categories);
         }
 
         public IActionResult Select()
