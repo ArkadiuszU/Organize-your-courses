@@ -1,6 +1,25 @@
-﻿$primary: #0F0; //red
+﻿// Custom.scss
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import '../lib/bootstrap/scss/functions';
+
+// 2. Include any default variable overrides here
+$primary: #ffd800;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import '../lib/bootstrap/scss/variables';
+@import '../lib/bootstrap/scss/mixins';
+
+// Create your own map
+$custom-colors: ( "custom": #808080 );
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+$utilities: ( "height": ( 
+    property: height,
+    class: vh,
+    values: ( 0: 0vh, 25: 25vh, 50: 50vh, 75: 75vh, 100: 100vh) ) );
+
+// 4. Include any optional Bootstrap components as you like
 @import '../lib/bootstrap/scss/bootstrap';
 
-nav.navbar {
-    background: linear-gradient($primary, #b6ff00)
-}
+// 5. Add additional custom code here
