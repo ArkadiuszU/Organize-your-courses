@@ -18,7 +18,23 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 $utilities: ( "height": ( 
     property: height,
     class: vh,
-    values: ( 0: 0vh, 25: 25vh, 50: 50vh, 75: 75vh, 100: 100vh) ) );
+    values: ( 0: 0vh, 25: 25vh, 50: 50vh, 75: 75vh, 100: 100vh) ),
+     "margin": ( 
+    property: margin-left, 
+    class: margin, 
+    values: ( 0: 0%, 5: 5%, 10: 10%, 15:15%, 20:20%,25:25%,30:30%,35:35%,40:40%, 45:45%, 50:50%, 55:55%, 60:60%, 65:65%, 70:70%, 75:75%, 80:80%, 85:85% , 90: 90%, 95:95%, 100: 100%)),
+    "top": ( 
+    property: top, 
+    class: top, 
+    values: ( 0: 0%, 5: 5%, 10: 10%, 15:15%, 20:20%,25:25%,30:30%,35:35%,40:40%, 45:45%, 50:50%, 55:55%, 60:60%, 65:65%, 70:70%, 75:75%, 80:80%, 85:85% , 90: 90%, 95:95%, 100: 100%)),
+    "end": ( 
+    property: right, 
+    class: end, 
+    values: ( 0: 0%, 5: 5%, 10: 10%, 15:15%, 20:20%,25:25%,30:30%,35:35%,40:40%, 45:45%, 50:50%, 55:55%, 60:60%, 65:65%, 70:70%, 75:75%, 80:80%, 85:85% , 90: 90%, 95:95%, 100: 100%)),
+
+    );
+
+
 
 // 4. Include any optional Bootstrap components as you like
 @import '../lib/bootstrap/scss/bootstrap';
