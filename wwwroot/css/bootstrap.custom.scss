@@ -21,7 +21,7 @@ $utilities: ( "height": (
     class: vh,
     values: ( 0: 0vh, 5: 5vh, 10: 10vh, 15:15vh, 20:20vh,25:25vh,30:30vh,35:35vh,40:40vh, 45:45vh, 50:50vh, 55:55vh, 60:60vh, 65:65vh, 70:70vh, 75:75vh, 80:80vh, 85:85vh , 90: 90vh, 95:95vh, 100: 100vh) ),
      "margin": ( 
-    property: margin-left, 
+    property: margin-top margin-bottom, 
     class: margin, 
     values: $valuesPerCent),
     "top": ( 

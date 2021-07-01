@@ -10,6 +10,7 @@ using OrganizeYourCourses.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 
@@ -33,6 +34,9 @@ namespace OrganizeYourCourses
             services.AddScoped<OrganizeYourCoursesSeeder>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddAutoMapper(this.GetType().Assembly);
+            services.AddServerSideBlazor();
+            services.AddScoped(sp => new HttpClient{BaseAddress = new Uri("https://localhost:5001") });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,8 +61,11 @@ namespace OrganizeYourCourses
 
             app.UseAuthorization();
 
+            
+
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapBlazorHub();
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

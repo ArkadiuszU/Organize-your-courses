@@ -1,0 +1,59 @@
+﻿@using System.Net.Http
+@using System.Net.Http.Json
+@using System.Threading.Tasks
+@inject HttpClient Http
+
+
+
+<h3>Counter</h3>
+
+<p> Counter: @Value</p>
+
+<button @onclick="Increment"> Increment  </button>
+<input @bind="@insertValue" />
+<input @bind="@getValue" />
+
+<ul>
+    @foreach (var item in list)
+    {
+        <li> <span>@item.Id _ @item.Value </span> <button @onclick="@(() => Del(item.Id))"> </button></li>
+    }
+</ul>
+
+
+@code {
+
+    class Item
+    {
+        public int Id { get; set; }
+        public string Value { get; set; }
+    }
+
+    private int Value = 12;
+    private string insertValue = "";
+    private string getValue = "";
+    List<Item> list = new List<Item> { new Item { Id = 1, Value = "A" }, new Item { Id = 2, Value = "B" }, new Item { Id = 3, Value = "C" } };
+    [Parameter]
+    public int IncrementValue { get; set; } = 1;
+
+    private void Increment()
+    {
+        Value += IncrementValue;
+        list.Add(new Item { Id = list.Count() + 1, Value = insertValue });
+    }
+
+    private void Del(int id)
+    {
+        var item = list.FirstOrDefault(i => i.Id == id);
+        list.Remove(item);
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var response = await Http.GetAsync("Categories/GetString");
+        getValue = await response.Content.ReadAsStringAsync();
+
+    }
+
+}

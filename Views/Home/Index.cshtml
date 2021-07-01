@@ -12,32 +12,34 @@
     </div>
 </div>
 
-<div class="container">
+<div class="bg-primary vh-100 d-flex align-items-center">
+        <div class="row d-flex justify-content-around vh-60 w-100" >
+            <div class="col-4 margin-5">
+                <h1 class="display-4">Welcome</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="col-4 position-relative">
+                <div class="bg-tertiary position-absolute end-35 top-10" style="width: 200px; height: 200px; border-radius:50%; z-index:2;"> </div>
+                <div class="bg-tertiary position-absolute end-50 top-50" style="width: 175px; height: 175px; border-radius:50%; z-index:2;"> </div>
+                <div class="bg-tertiary position-absolute end-20 top-50" style="width: 100px; height: 100px; border-radius:50%; z-index:2;"> </div>
 
-    <div class="row bg-primary d-flex justify-content-between w-100" style="height:60vh;">
-        <div class="col-4 bg-secondary">
-        </div>
-        <div class="col-6 position-relative">
-            <div class="bg-tertiary position-absolute end-35 top-10" style="width: 200px; height: 200px; border-radius:50%; z-index:2;"> </div>
-            <div class="bg-tertiary position-absolute end-50 top-50" style="width: 175px; height: 175px; border-radius:50%; z-index:2;"> </div>
-            <div class="bg-tertiary position-absolute end-20 top-50" style="width: 100px; height: 100px; border-radius:50%; z-index:2;"> </div>
+                <img class="position-absolute top-0 end-20" style="z-index:2;" src="~/img/volley.png" />
+                <img class="position-absolute top-25 end-60" style="z-index:2;" src="~/img/foot.png" />
+                <img class="position-absolute top-50 end-25" style="z-index:2;" src="~/img/basket.png" />
 
-            <img class="position-absolute top-0 end-20" style="z-index:2;" src="~/img/volley.png" />
-            <img class="position-absolute top-25 end-60" style="z-index:2;" src="~/img/foot.png" />
-            <img class="position-absolute top-50 end-25" style="z-index:2;" src="~/img/basket.png" />
-
-            <div class="position-absolute end-20 top-0" style="width: 300px; height: 300px; border-radius:50%; border:1px solid #97CEDB;"> </div>
-            <div class="position-absolute end-50 top-20" style="width: 300px; height: 300px; border-radius:50%; border:1px solid #97CEDB;"> </div>
-            <div class="position-absolute end-15 top-50" style="width: 200px; height: 200px; border-radius:50%; border:1px solid #97CEDB;"> </div>
+                <div class="position-absolute end-20 top-0" style="width: 300px; height: 300px; border-radius:50%; border:1px solid #97CEDB;"> </div>
+                <div class="position-absolute end-50 top-20" style="width: 300px; height: 300px; border-radius:50%; border:1px solid #97CEDB;"> </div>
+                <div class="position-absolute end-15 top-50" style="width: 200px; height: 200px; border-radius:50%; border:1px solid #97CEDB;"> </div>
+            </div>
         </div>
     </div>
-</div>
 
 <div class="w-100 vh-100 bg-secondary ">
-    <div class="text-center bg-custom">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    </div>
+   
+    <component type="typeof(Counter)" render-mode="ServerPrerendered" param-IncrementValue ="10" />
+    <Couter> </Couter>
 
 </div>
 

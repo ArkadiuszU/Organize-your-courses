@@ -24,7 +24,14 @@ namespace OrganizeYourCourses.Controllers
             var categories = categoryRepository.GetActiveCategories();
             return View(categories);
         }
-        
+
+        [HttpGet]
+        public string GetString()
+        {
+            //var categories = categoryRepository.GetActiveCategories();
+            return "No hej";
+        }
+
         [HttpGet]
         public IActionResult Select()
         {
