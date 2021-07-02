@@ -56,3 +56,23 @@ $utilities: ( "height": (
         opacity:0.5;
     }
 }
+.image-cup {
+    background: url('../img/cup.png');
+    background-size: 160%;
+    background-position-x: right;
+    background-position-y: center;
+    background-repeat: no-repeat;
+}
+.bg-confetti {
+    background: url('../img/confetti.png');
+    background-size: contain;
+    background-position: center;
+    opacity:0.4;
+}
+
+.bg-timetable {
+    background: url('../img/timetable.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}

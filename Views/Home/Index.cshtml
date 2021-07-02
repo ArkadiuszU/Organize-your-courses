@@ -10,6 +10,21 @@
         <h1 class="display-4">Welcome</h1>
         <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
     </div>
+    @*<div class="position-absolute top-30 d-flex justify-content-around w-50">
+        <div>
+            <h5>Search</h5>
+            <img style="width:50px;height:50px;" src="~/img/search.svg" />
+        </div>
+        <div>
+            <h5>Schedule</h5>
+            <img style="width:50px;height:50px;" src="~/img/schedule.svg" />
+        </div>
+        <div>
+            <h5>Prize</h5>
+            <img style="width:50px;height:50px;" src="~/img/success.svg" />
+        </div>
+
+    </div>*@
 </div>
 
 <div class="bg-primary vh-100 d-flex align-items-center">
@@ -36,10 +51,42 @@
         </div>
     </div>
 
-<div class="w-100 vh-100 bg-secondary ">
-   
-    <component type="typeof(Counter)" render-mode="ServerPrerendered" param-IncrementValue ="10" />
-    <Couter> </Couter>
+<div class="w-100 vh-100 bg-secondary position-relative">
+
+    <div class="row w-100 ">
+        <div class="image-cup col-5" style="height:800px;"> </div>
+        <div class="col-5 " >
+            <div class="bg-confetti vh-100 "></div>
+            <div class="position-absolute top-20 end-25 w-25 text-center">
+                <h1 class="display-4">Welcome</h1>
+                <p>Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+        
+
+    </div>
+
+
+</div>
+
+<div class="w-100 vh-100 bg-primary d-flex justify-content-around ">
+    <div class="col-5 bg-dark">
+
+    </div>
+
+    <div class="col-5 position-relative">
+       <div class="bg-timetable w-80 vh-50 margin-15"   >
+
+       </div>
+
+    </div>
+
+
+
+
+    @*<component type="typeof(Counter)" render-mode="ServerPrerendered" param-IncrementValue="10" />*@
 
 </div>
 
@@ -51,14 +98,14 @@
 
 
 
-<svg class="w-100 position-absolute bottom-0 start-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-    <path fill="#32485C" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,192C384,203,480,245,576,266.7C672,288,768,288,864,282.7C960,277,1056,267,1152,234.7C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-</svg>
+    <svg class="w-100 position-absolute bottom-0 start-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#32485C" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,192C384,203,480,245,576,266.7C672,288,768,288,864,282.7C960,277,1056,267,1152,234.7C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
 
 
 
-@*<iframe width="450"
-            height="250"
-            frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAIUBmsZeVN2Nr7yMpziY3XU1RPXqZZ1bk&q=Osiedle+Bolesława+Śmiałego+6A,60-682Poznań&zoom=14" allowfullscreen>
-    </iframe>*@
+    @*<iframe width="450"
+                height="250"
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAIUBmsZeVN2Nr7yMpziY3XU1RPXqZZ1bk&q=Osiedle+Bolesława+Śmiałego+6A,60-682Poznań&zoom=14" allowfullscreen>
+        </iframe>*@
