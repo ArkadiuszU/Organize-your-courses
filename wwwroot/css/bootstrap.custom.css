@@ -7931,3 +7931,9 @@ textarea.form-control-lg {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat; }
+
+.waveline {
+  background: url("../img/wave-line.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }

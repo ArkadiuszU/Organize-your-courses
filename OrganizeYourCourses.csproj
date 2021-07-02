@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\img\SportsField\1234\**" />
+    <Content Remove="wwwroot\img\SportsField\1234\**" />
+    <EmbeddedResource Remove="wwwroot\img\SportsField\1234\**" />
+    <None Remove="wwwroot\img\SportsField\1234\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="compilerconfig.json" />
   </ItemGroup>
 
