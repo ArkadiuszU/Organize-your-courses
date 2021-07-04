@@ -6238,6 +6238,90 @@ textarea.form-control-lg {
 .invisible {
   visibility: hidden !important; }
 
+.off-0 {
+  padding-top: 0% !important;
+  margin-bottom: 0% !important; }
+
+.off-5 {
+  padding-top: 5% !important;
+  margin-bottom: 5% !important; }
+
+.off-10 {
+  padding-top: 10% !important;
+  margin-bottom: 10% !important; }
+
+.off-15 {
+  padding-top: 15% !important;
+  margin-bottom: 15% !important; }
+
+.off-20 {
+  padding-top: 20% !important;
+  margin-bottom: 20% !important; }
+
+.off-25 {
+  padding-top: 25% !important;
+  margin-bottom: 25% !important; }
+
+.off-30 {
+  padding-top: 30% !important;
+  margin-bottom: 30% !important; }
+
+.off-35 {
+  padding-top: 35% !important;
+  margin-bottom: 35% !important; }
+
+.off-40 {
+  padding-top: 40% !important;
+  margin-bottom: 40% !important; }
+
+.off-45 {
+  padding-top: 45% !important;
+  margin-bottom: 45% !important; }
+
+.off-50 {
+  padding-top: 50% !important;
+  margin-bottom: 50% !important; }
+
+.off-55 {
+  padding-top: 55% !important;
+  margin-bottom: 55% !important; }
+
+.off-60 {
+  padding-top: 60% !important;
+  margin-bottom: 60% !important; }
+
+.off-65 {
+  padding-top: 65% !important;
+  margin-bottom: 65% !important; }
+
+.off-70 {
+  padding-top: 70% !important;
+  margin-bottom: 70% !important; }
+
+.off-75 {
+  padding-top: 75% !important;
+  margin-bottom: 75% !important; }
+
+.off-80 {
+  padding-top: 80% !important;
+  margin-bottom: 80% !important; }
+
+.off-85 {
+  padding-top: 85% !important;
+  margin-bottom: 85% !important; }
+
+.off-90 {
+  padding-top: 90% !important;
+  margin-bottom: 90% !important; }
+
+.off-95 {
+  padding-top: 95% !important;
+  margin-bottom: 95% !important; }
+
+.off-100 {
+  padding-top: 100% !important;
+  margin-bottom: 100% !important; }
+
 @media (min-width: 576px) {
   .float-sm-start {
     float: left !important; }

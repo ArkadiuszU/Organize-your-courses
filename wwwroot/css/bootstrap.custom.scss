@@ -32,9 +32,11 @@ $utilities: ( "height": (
     property: right, 
     class: end, 
     values: $valuesPerCent),
+    "offset": ( 
+    property: padding-top margin-bottom, 
+    class: off, 
+    values: $valuesPerCent),
     );
-
-
 
 // 4. Include any optional Bootstrap components as you like
 @import '../lib/bootstrap/scss/bootstrap';
@@ -56,6 +58,7 @@ $utilities: ( "height": (
         opacity:0.5;
     }
 }
+
 .image-cup {
     background: url('../img/cup.png');
     background-size: 160%;

@@ -1,0 +1,91 @@
+﻿@model OrganizeYourCourses.Models.SportField
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="bg-background" style="min-height:100vh;">
+    <div class="container">
+        <div class="row off-10 d-flex justify-content-between">
+            <div class="col-5 position-relative">
+                <img class="w-100 sportfield-img position-relative rounded" style="z-index:2;" src="~/img/SportsField/1.jpg" />
+            </div>
+            <div class="col-6">
+                <h6 style="border-bottom: #EF798E solid 2px;">@Model.Type.ToString() field</h6>
+                <h1>@Model.Name</h1>
+                <h6>Description</h6>
+                <p>@Model.Description</p>
+                <ul class="row off-5 ">
+                    @foreach (PropertyInfo prop in Model.Features.GetType().GetProperties())
+                    {
+                    <li class="d-flex col-6">
+                        <img style="width:30px; height:30px; margin-right:2%"
+                             src=@((bool)prop.GetValue(Model.Features, null)?"/img/icons/confirmation.png":"/img/icons/close.png") />
+                        <p> @prop.Name.ToLower() </p>
+                    </li>
+                    }
+                </ul>
+                <div class=" w-100 d-flex justify-content-around">
+                    <button type="button" class="btn btn-outline-primary">Primary</button>
+                    <button type="button" class="btn btn-outline-primary">Primary</button>
+                    <button type="button" class="btn btn-outline-primary">Primary</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <iframe width="450"
+                    height="250"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAIUBmsZeVN2Nr7yMpziY3XU1RPXqZZ1bk&q=@(Model.Street)+@(Model.Number)+@(Model.City)&zoom=14" allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row vh-20 d-flex justify-content-around">
+            <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center " style="height:60%;">
+                    <img style="width:60px; height:60px;" src="~/img/icons/place.png" />
+                </div>
+                <div class="text-center" style="height:40%;">
+                    <h6>@Model.Street @Model.Number</h6>
+                    <h6>60-921 @Model.City</h6>
+                </div>
+            </div>
+
+            <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center " style="height:60%;">
+                    <img style="width:60px; height:60px;" src="~/img/icons/call.png" />
+                </div>
+                <div class="text-center" style="height:40%;">
+                    <h6>@Model.PhoneNumber</h6>
+                </div>
+            </div>
+
+            <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center " style="height:60%;">
+                    <img style="width:60px; height:60px;" src="~/img/icons/envelope.png" />
+                </div>
+                <div class="text-center" style="height:40%;">
+                    <h6>@Model.Email</h6>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row vh-20 d-flex justify-content-around">
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
